@@ -130,8 +130,8 @@
     }
     .video-container {
       position: relative;
-      width: 1680px;
-      height: 945px;
+      width: 560px;
+      height: 315px;
       max-width: 98vw;
       max-height: 55vw;
       margin: 2em auto;
@@ -148,14 +148,6 @@
       border: 0;
       border-radius: 14px;
     }
-    @media (max-width: 1800px) {
-      .video-container {
-        width: 98vw;
-        height: calc(98vw * 0.5625);
-        max-width: 1680px;
-        max-height: 945px;
-      }
-    }
     @media (max-width: 700px) {
       .video-container {
         width: 100vw;
@@ -165,17 +157,39 @@
         margin: 1.5em 0;
       }
     }
+    /* SVG background fix */
+    #background-svg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    body {
+      position: relative;
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+    }
   </style>
 </head>
 <body>
-  <script src="mbc_site/mystical-bg.js"></script>
   <div id="background-svg"></div>
+  <script src="mbc_site/mystical-bg.js"></script>
   <div class="container">
     <header>
       <div class="main-title">Mystical Bible Companion</div>
       <div class="subtitle">Currently in Alpha Testing & Coming Soon to Google Play Store!</div>
       <button class="cta" onclick="window.open('https://play.google.com/apps/testing/com.aialchemist.mysticalbiblecompanion','_blank')">Request Early Access</button>
     </header>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qQtW3GVbkGs?si=Hg_9y5PndwM-7VDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
     <div class="screenshots">
       <h2>App Preview Gallery</h2>
       <div class="screenshot-gallery">
@@ -190,9 +204,6 @@
         <div class="screenshot"><img src="mbc_site/images/screen09.jpg" alt="User onboarding screen"></div>
         <div class="screenshot"><img src="mbc_site/images/screen10.jpg" alt="Mystical Bible Companion navigation"></div>
       </div>
-    </div>
-    <div class="video-container">
-      <iframe width="1680" height="945" src="https://www.youtube.com/embed/qQtW3GVbkGs?si=Hg_9y5PndwM-7VDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="about">
       <h3>About the App</h3>
