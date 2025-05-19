@@ -4,9 +4,14 @@
   if (!svg) return;
   svg.innerHTML = '';
   svg.setAttribute('viewBox', '0 0 1920 1080');
-  svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-  svg.style.width = '100vw';
-  svg.style.height = '100vh';
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.style.width = '140vw';
+  svg.style.height = '140vh';
+  svg.style.position = '';
+  svg.style.left = '';
+  svg.style.top = '';
+  svg.style.transform = '';
+  svg.style.display = 'block';
   const W = 1920, H = 1080;
 
   // Helper: random color from palette
