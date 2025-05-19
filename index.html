@@ -130,6 +130,24 @@
       margin-top: 0;
       text-align: center;
     }
+    .tester-signup {
+      margin: 2em auto 1.5em auto;
+      max-width: 430px;
+      background: rgba(40, 0, 60, 0.33);
+      border-radius: 16px;
+      box-shadow: 0 2px 18px #7e3ff244, 0 0 0 2px #a259ff22;
+      padding: 1.5em 1.2em 1em 1.2em;
+      text-align: center;
+      border: 1.5px solid #a259ff33;
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: 900px) {
+      .tester-signup {
+        max-width: 100%;
+        min-width: 0;
+      }
+    }
     .feature-list {
       margin: 2.5em auto 2em auto;
       max-width: 700px;
@@ -190,6 +208,84 @@
       align-items: center;
       justify-content: center;
     }
+    .tester-signup {
+      margin: 2.5em auto 2em auto;
+      max-width: 700px;
+      background: rgba(40, 0, 60, 0.33);
+      border-radius: 16px;
+      box-shadow: 0 2px 18px #7e3ff244, 0 0 0 2px #a259ff22;
+      padding: 2em 1.5em 1.5em 1.5em;
+      text-align: center;
+      border: 1.5px solid #a259ff33;
+      position: relative;
+      z-index: 3;
+    }
+    .tester-signup h2 {
+      color: #ffe066;
+      margin-bottom: 1.1em;
+      font-size: 1.38em;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px #7e5cff77;
+    }
+    .tester-instructions {
+      color: #e0d6ff;
+      font-size: 1.07em;
+      margin-bottom: 1.3em;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .mystical-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+      margin: 0 auto;
+      max-width: 440px;
+    }
+    .mystical-form label {
+      color: #e0b3ff;
+      font-weight: 500;
+      margin-bottom: 0.2em;
+      text-align: left;
+      align-self: flex-start;
+      letter-spacing: 0.01em;
+    }
+    .mystical-form input[type="text"],
+    .mystical-form input[type="email"],
+    .mystical-form textarea {
+      width: 100%;
+      padding: 0.7em 1em;
+      border-radius: 10px;
+      border: 1.2px solid #a259ff55;
+      background: rgba(255,255,255,0.07);
+      color: #faf6ff;
+      font-size: 1.08em;
+      margin-bottom: 0.7em;
+      box-shadow: 0 1px 8px #7e3ff244;
+      outline: none;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .mystical-form input[type="text"]:focus,
+    .mystical-form input[type="email"]:focus,
+    .mystical-form textarea:focus {
+      border: 1.5px solid #ffe066;
+      box-shadow: 0 0 8px #ffe06655;
+      background: rgba(255,255,255,0.13);
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1em;
+      gap: 0.6em;
+      width: 100%;
+    }
+    .consent-label {
+      color: #e0d6ff;
+      font-size: 0.98em;
+      line-height: 1.3;
+      text-align: left;
+      margin-top: 0.1em;
+    }
     .video-container iframe {
       width: 100%;
       height: 100%;
@@ -249,6 +345,26 @@
     <header>
       <div class="main-title">Mystical Bible Companion</div>
       <div class="subtitle">Currently in Alpha Testing & Coming Soon to Google Play Store!</div>
+      <section class="tester-signup">
+        <h2>Become a Mystical Bible Companion Tester</h2>
+        <p class="tester-instructions">
+          Please email me first using this form to be added as an internal tester.<br>
+          <strong>Wait for my response before following the "Request Early Access" link below.</strong>
+        </p>
+        <form class="mystical-form" action="mailto:manny@aialchemist.net" method="POST" enctype="text/plain">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="Name" required autocomplete="name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="Email" required autocomplete="email">
+          <label for="message">Optional Message:</label>
+          <textarea id="message" name="Message" rows="3" placeholder="Tell us why you're interested or any relevant info..."></textarea>
+          <div class="checkbox-row">
+            <input type="checkbox" id="consent" name="Consent" value="Yes" required>
+            <label for="consent" class="consent-label">I would like to be added as a Mystical Bible Companion tester and consent to being contacted by email.</label>
+          </div>
+          <button type="submit" class="cta">Apply as Tester</button>
+        </form>
+      </section>
       <button class="cta" onclick="window.open('https://play.google.com/apps/testing/com.aialchemist.mysticalbiblecompanion','_blank')">Request Early Access</button>
     </header>
     <div class="video-container">
@@ -267,6 +383,7 @@
         <li><strong>Built with leading-edge tech</strong>: AI, secure cloud, and a mystical, artful design.</li>
       </ul>
     </section>
+
     <div class="screenshots">
       <h2>App Preview Gallery</h2>
       <div class="screenshot-gallery">
