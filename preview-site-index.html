@@ -123,10 +123,58 @@
       font-size: 1.1em;
       color: #e0d6ff;
       box-shadow: 0 1px 8px #7e3ff244;
+      text-align: center;
     }
     .about h3 {
       color: #e0b3ff;
       margin-top: 0;
+      text-align: center;
+    }
+    .feature-list {
+      margin: 2.5em auto 2em auto;
+      max-width: 700px;
+      background: rgba(60, 0, 80, 0.33);
+      border-radius: 16px;
+      box-shadow: 0 2px 18px #7e3ff244, 0 0 0 2px #a259ff22;
+      padding: 2em 1.5em 1.5em 1.5em;
+      text-align: center;
+      border: 1.5px solid #a259ff33;
+      position: relative;
+      z-index: 3;
+    }
+    .feature-list h2 {
+      color: #e0b3ff;
+      margin-bottom: 1.1em;
+      font-size: 1.5em;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px #3D0066aa;
+    }
+    .feature-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      text-align: left;
+      max-width: 540px;
+      display: inline-block;
+    }
+    .feature-list li {
+      color: #f3eaff;
+      font-size: 1.13em;
+      margin: 1.1em 0 1.1em 0;
+      padding-left: 2.1em;
+      position: relative;
+      line-height: 1.6;
+      text-shadow: 0 1px 6px #3D0066aa;
+    }
+    .feature-list li:before {
+      content: '\272A'; /* mystical star glyph */
+      position: absolute;
+      left: 0.2em;
+      top: 0.13em;
+      color: #ffe066;
+      font-size: 1.25em;
+      text-shadow: 0 0 8px #a259ff, 0 0 2px #fffbe6;
+      filter: blur(0.2px);
     }
     .video-container {
       position: relative;
@@ -167,6 +215,22 @@
       z-index: 0;
       pointer-events: none;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #mystical-svg {
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      max-width: 1920px;
+      max-height: 1080px;
+      pointer-events: none;
     }
     body {
       position: relative;
@@ -188,8 +252,21 @@
       <button class="cta" onclick="window.open('https://play.google.com/apps/testing/com.aialchemist.mysticalbiblecompanion','_blank')">Request Early Access</button>
     </header>
     <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/qQtW3GVbkGs?si=Hg_9y5PndwM-7VDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="840" height="473" src="https://www.youtube.com/embed/qQtW3GVbkGs?si=Hg_9y5PndwM-7VDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
+    <section class="feature-list">
+      <h2>What Can Mystical Bible Companion Do?</h2>
+      <ul>
+        <li><strong>Read the Bible</strong> in a beautiful, easy-to-use format.</li>
+        <li><strong>Get mystical insights</strong> powered by advanced AI—explore Genesis 1 and Matthew 1 for free, or unlock the full experience.</li>
+        <li><strong>Take private notes</strong> and journal your spiritual journey—no account required for basic use.</li>
+        <li><strong>Bookmark</strong> your favorite verses and commentary (premium feature).</li>
+        <li><strong>Enjoy sacred music</strong> and meditative sounds, right in the app.</li>
+        <li><strong>Upgrade once</strong> for lifetime access—no subscriptions, no ads, privacy-first.</li>
+        <li><strong>Fast, secure, and private</strong>—your notes and data stay on your device unless you choose to upgrade and sync.</li>
+        <li><strong>Built with leading-edge tech</strong>: AI, secure cloud, and a mystical, artful design.</li>
+      </ul>
+    </section>
     <div class="screenshots">
       <h2>App Preview Gallery</h2>
       <div class="screenshot-gallery">
