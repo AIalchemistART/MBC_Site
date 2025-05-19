@@ -130,22 +130,40 @@
     }
     .video-container {
       position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
+      width: 1680px;
+      height: 945px;
+      max-width: 98vw;
+      max-height: 55vw;
+      margin: 2em auto;
       border-radius: 14px;
       box-shadow: 0 2px 16px #3D0066aa;
-      margin: 2em 0 2em 0;
       background: #1a0933;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       border: 0;
       border-radius: 14px;
+    }
+    @media (max-width: 1800px) {
+      .video-container {
+        width: 98vw;
+        height: calc(98vw * 0.5625);
+        max-width: 1680px;
+        max-height: 945px;
+      }
+    }
+    @media (max-width: 700px) {
+      .video-container {
+        width: 100vw;
+        height: calc(100vw * 0.5625);
+        min-width: 0;
+        min-height: 0;
+        margin: 1.5em 0;
+      }
     }
   </style>
 </head>
@@ -174,7 +192,7 @@
       </div>
     </div>
     <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/your_video_id_here" allowfullscreen title="Mystical Bible Companion Trailer"></iframe>
+      <iframe width="1680" height="945" src="https://www.youtube.com/embed/qQtW3GVbkGs?si=Hg_9y5PndwM-7VDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="about">
       <h3>About the App</h3>
