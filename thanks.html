@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #1a0933;
+      color: #ffe066;
+      text-align: center;
+      padding-top: 7vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .thankyou {
+      font-size: 2.1em;
+      margin-bottom: 0.7em;
+      text-shadow: 0 2px 18px #7e5cff99;
+    }
+    .instructions {
+      color: #e0d6ff;
+      font-size: 1.13em;
+      margin-bottom: 2.5em;
+    }
+    .return-btn {
+      background: linear-gradient(90deg, #a259ff 0%, #ffe066 100%);
+      color: #1a0933;
+      border: none;
+      border-radius: 12px;
+      padding: 0.85em 2.2em;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 14px #7e3ff244;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 1.5em;
+    }
+    .return-btn:hover {
+      background: linear-gradient(90deg, #ffe066 0%, #a259ff 100%);
+      color: #3D0066;
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou">Thank you for applying as a Mystical Bible Companion tester!</div>
+  <div class="instructions">We’ve received your information.<br>Please wait for a response before following the Early Access link.</div>
+  <button class="return-btn" onclick="window.location.href='/'">Return to Mystical Bible Companion Website</button>
+</body>
+</html>
