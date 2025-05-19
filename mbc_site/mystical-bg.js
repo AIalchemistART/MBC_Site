@@ -3,6 +3,10 @@
   const svg = document.getElementById('mystical-svg');
   if (!svg) return;
   svg.innerHTML = '';
+  svg.setAttribute('viewBox', '0 0 1920 1080');
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+  svg.style.width = '100vw';
+  svg.style.height = '100vh';
   const W = 1920, H = 1080;
 
   // Helper: random color from palette
