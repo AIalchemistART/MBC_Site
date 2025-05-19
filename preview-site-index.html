@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystical Bible Companion – Preview</title>
+  <link rel="stylesheet" href="mbc_site/mystical-bg.js" /> <!-- This will be loaded as JS, not CSS -->
+  <style>
+    body {
+      margin: 0;
+      background: #14002A;
+      color: #faf6ff;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5em 1.2em 1.2em 1.2em;
+      position: relative;
+      z-index: 2;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5em;
+    }
+    .main-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      letter-spacing: 0.03em;
+      color: #e0b3ff;
+      margin-bottom: 0.3em;
+      text-shadow: 0 2px 18px #7e3ff2cc, 0 1px 0 #fff2;
+    }
+    .subtitle {
+      font-size: 1.2em;
+      color: #c8a9f5;
+      margin-bottom: 0.7em;
+    }
+    .cta {
+      background: linear-gradient(90deg, #7e3ff2 0%, #e0b3ff 100%);
+      color: #fff;
+      font-weight: bold;
+      padding: 0.8em 2.2em;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      margin-top: 1.2em;
+      box-shadow: 0 2px 12px #7e3ff288;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-shadow: 0 1px 0 #0002;
+    }
+    .cta:hover {
+      background: linear-gradient(90deg, #e0b3ff 0%, #7e3ff2 100%);
+      color: #2a004b;
+    }
+    .screenshots {
+      margin: 2.5em 0 2em 0;
+      text-align: center;
+    }
+    .screenshots h2 {
+      font-size: 1.5em;
+      color: #e0b3ff;
+      margin-bottom: 1.2em;
+    }
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.5em;
+      justify-items: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    .screenshot {
+      background: #2A004B;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #3D006688;
+      overflow: hidden;
+      width: 154px;
+      height: 333px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s;
+    }
+    .screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 1200px) {
+      .screenshot-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        max-width: 400px;
+      }
+      .screenshot {
+        width: 103px;
+        height: 223px;
+      }
+    }
+    @media (max-width: 700px) {
+      .screenshot-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        max-width: 90vw;
+      }
+      .screenshot {
+        width: 90vw;
+        height: 166px;
+      }
+    }
+    .about {
+      background: rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 2em 1.5em;
+      margin: 2em auto 0 auto;
+      max-width: 700px;
+      font-size: 1.1em;
+      color: #e0d6ff;
+      box-shadow: 0 1px 8px #7e3ff244;
+    }
+    .about h3 {
+      color: #e0b3ff;
+      margin-top: 0;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #3D0066aa;
+      margin: 2em 0 2em 0;
+      background: #1a0933;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 14px;
+    }
+  </style>
+</head>
+<body>
+  <script src="mbc_site/mystical-bg.js"></script>
+  <div id="background-svg"></div>
+  <div class="container">
+    <header>
+      <div class="main-title">Mystical Bible Companion</div>
+      <div class="subtitle">Currently in Alpha Testing & Coming Soon to Google Play Store!</div>
+      <button class="cta" onclick="window.open('https://forms.gle/3p5nX2Qw8y8b9tQh9','_blank')">Request Early Access</button>
+    </header>
+    <div class="screenshots">
+      <h2>App Preview Gallery</h2>
+      <div class="screenshot-gallery">
+        <div class="screenshot"><img src="mbc_site/images/screen01.jpg" alt="Mystical Bible Companion home screen"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen02.jpg" alt="Premium features overview"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen03.jpg" alt="Divine Inspiration mystical commentary"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen04.jpg" alt="Journal entry interface"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen05.jpg" alt="Bible reading view"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen06.jpg" alt="Sacred Sounds music section"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen07.jpg" alt="Premium upgrade prompt"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen08.jpg" alt="Settings and About tab"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen09.jpg" alt="User onboarding screen"></div>
+        <div class="screenshot"><img src="mbc_site/images/screen10.jpg" alt="Mystical Bible Companion navigation"></div>
+      </div>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/your_video_id_here" allowfullscreen title="Mystical Bible Companion Trailer"></iframe>
+    </div>
+    <div class="about">
+      <h3>About the App</h3>
+      <p>The Mystical Bible Companion is your guide to a deeper, more mystical reading of scripture. Featuring AI-generated commentary, journaling, sacred music, and a visually immersive experience, our app is designed for spiritual seekers and modern mystics alike. Alpha testers get early access to all features and help shape our journey to launch!</p>
+      <p><strong>Coming soon:</strong> Full launch on Google Play Store. Stay tuned and request early access above!</p>
+    </div>
+  </div>
+</body>
+</html>

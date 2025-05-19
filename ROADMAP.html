@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mystical Bible Companion – Roadmap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #3D0066 0%, #A889FF 100%);
+      color: #fffbe6;
+      font-family: 'Spectral', serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(50,0,80,0.95);
+      padding: 2rem 1rem 1rem 1rem;
+      border-bottom: 4px solid gold;
+      text-align: center;
+      position: relative;
+    }
+    .filigree {
+      background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2721.svg') repeat-x top left,
+                  url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/26B0.svg') repeat-x bottom right;
+      background-size: 60px, 60px;
+      height: 20px;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: 'Cardo', serif;
+      font-size: 2.7rem;
+      color: gold;
+      text-shadow: 0 2px 12px #3D0066, 0 0 4px #fffbe6;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      color: #e6c200;
+      border-left: 6px solid gold;
+      padding-left: 0.5em;
+      font-family: 'Cardo', serif;
+      margin-top: 2.2em;
+      margin-bottom: 0.7em;
+    }
+    h3 {
+      color: #d3b6ff;
+      font-family: 'Spectral', serif;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    .section {
+      background: rgba(60,0,80,0.72);
+      border-radius: 16px;
+      border: 2px solid gold;
+      box-shadow: 0 3px 24px #3d0066cc;
+      margin: 2.5em auto;
+      max-width: 900px;
+      padding: 2em 2em 1.5em 2em;
+      position: relative;
+    }
+    ul, ol {
+      font-size: 1.15em;
+      line-height: 1.6;
+      margin-left: 2em;
+    }
+    .icon-row {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    .icon-row span {
+      font-size: 2em;
+      margin: 0 0.25em;
+      filter: drop-shadow(0 0 6px #a889ff);
+    }
+    .roadmap-stage {
+      margin-bottom: 2.5em;
+    }
+    .stage-label {
+      font-size: 1.25em;
+      color: gold;
+      font-family: 'Cardo', serif;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.4em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .stage-label .icon {
+      font-size: 1.4em;
+      vertical-align: middle;
+    }
+    .about {
+      background: rgba(255, 255, 255, 0.13);
+      border: 2px dashed #e6c200;
+      border-radius: 12px;
+      color: #fffbe6;
+      padding: 1.5em 1.5em 1em 1.5em;
+      margin-bottom: 1.5em;
+      font-size: 1.13em;
+      text-align: center;
+    }
+    a {
+      color: #ffe066;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .section {
+        padding: 1em 0.5em;
+      }
+      h1 {
+        font-size: 2em;
+      }
+    }
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      margin-bottom: 1.1em;
+      font-size: 1.08em;
+      display: flex;
+      align-items: flex-start;
+    }
+    .roadmap-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 1.5em;
+      height: 1.5em;
+      border: 2px solid gold;
+      border-radius: 6px;
+      margin-right: 0.7em;
+      margin-top: 0.1em;
+      background: #3D0066;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      vertical-align: middle;
+    }
+    .roadmap-checkbox:checked {
+      background: linear-gradient(135deg, gold 60%, #fffbe6 100%);
+      border-color: #fffbe6;
+    }
+    .checkbox-custom {
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      position: absolute;
+      left: 0; top: 0;
+      pointer-events: none;
+    }
+    .roadmap-checkbox:checked + .checkbox-custom::before {
+      content: '\2714';
+      color: #3D0066;
+      font-size: 1.3em;
+      font-weight: bold;
+      position: absolute;
+      left: 0.18em;
+      top: 0.05em;
+      text-shadow: 0 0 4px #fffbe6;
+    }
+    .roadmap-checkbox + .checkbox-custom::before {
+      content: '';
+    }
+    .checklist label {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+    }
+    .roadmap-checkbox:checked ~ span, .roadmap-checkbox:checked ~ b, .roadmap-checkbox:checked ~ strong {
+      text-decoration: line-through;
+      color: #ffe066;
+      opacity: 0.7;
+    }
+    .checklist label b {
+      margin-left: 0.1em;
+    }
+    .checklist label:focus-within {
+      outline: 2px solid #ffe066;
+      border-radius: 6px;
+    }
+    /* Keep Notes section as plain bullets */
+    /* Future Enhancements */
+    .checklist ul {
+      border-left: 4px solid gold;
+      margin-left: 1.2em;
+      padding-left: 1.1em;
+      margin-top: 0.5em;
+      background: rgba(255,251,230,0.13);
+      border-radius: 10px;
+    }
+    .checklist ul li {
+      color: gold;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+    .checklist ul li span {
+      margin-right: 0.5em;
+      font-size: 1.1em;
+    }
+  </style>
+  <script>
+    // Persist checklist state in localStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('.roadmap-checkbox');
+      checkboxes.forEach(cb => {
+        const key = 'roadmap-checkbox-' + cb.dataset.key;
+        // Restore state
+        if (localStorage.getItem(key) === 'true') {
+          cb.checked = true;
+        }
+        cb.addEventListener('change', function() {
+          localStorage.setItem(key, cb.checked);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="filigree"></div>
+    <h1>🜁 Mystical Bible Companion 🜂</h1>
+    <div class="icon-row">
+      <span title="Cross">✝️</span>
+      <span title="Chalice">🕊️</span>
+      <span title="Star of David">✡️</span>
+      <span title="Trinity">☘️</span>
+      <span title="Alchemy">🜄 🜃 🜁 🜂</span>
+      <span title="Eye">👁️</span>
+      <span title="Crescent">☽</span>
+    </div>
+    <div class="about">
+      <strong>About:</strong> The Mystical Bible Companion is a unique spiritual tool blending Christian scripture, mystical insight, and alchemical symbolism. Our approach is heterodox, contemplative, and open to seekers of all backgrounds. Unlike rationalist or strictly orthodox apps, we focus on the living, inner meaning of the text—inviting you into a journey of transformation, not just information.
+    </div>
+    <div class="filigree"></div>
+  </header>
+
+  <main>
+    <section class="section" style="border: 2px solid gold; background: rgba(60,0,80,0.90); margin-top: 2em;">
+      <h2>✅ Recent Accomplishments</h2>
+      <ul>
+        <li>Persistent Supabase authentication with SecureStore</li>
+        <li>Environment variable enforcement for Supabase keys (no hardcoded credentials)</li>
+        <li>Sensitive key audit completed</li>
+        <li>Debug logging for session/token storage (now commented out)</li>
+        <li>Documentation and roadmap updated to reflect current state</li>
+      </ul>
+      <h2>🟡 Next Up</h2>
+      <ul>
+        <li>Payment system integration for premium subscriptions</li>
+        <li>Premium feature gating (dynamic, interconnected Bible passage selection)</li>
+        <li>CAPTCHA integration (invisible for signup, visible for payment)</li>
+        <li>Accessibility options (text size, text-to-speech, speech input)</li>
+        <li>Free API call limit (31 per month, resets monthly)</li>
+        <li>Documentation review and production-readiness audit</li>
+      </ul>
+    </section>
+
+    <section class="section visual-context" style="border: 3px solid gold; background: rgba(60,0,80,0.88); padding: 2.5em 2em; margin-top: 2.5em;">
+      <h3 style="color: gold; font-size: 1.7rem; margin-top: 0;">Visual & Mystical UI Enhancements</h3>
+      <p style="color: #ffe066; font-size: 1.1rem; margin-bottom: 1.5em;"><strong>Context:</strong> The visual language of the Mystical Bible Companion is an evolving, central pillar of the user experience. Use the checklist below to track all visual polish steps, mystical UI elements, and advanced effects added or planned for the app.</p>
+      <ul class="checklist" data-section="visual">
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-0"> <span class="checkbox-custom"></span>Extend mystical style to all screens</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-1"> <span class="checkbox-custom"></span>Custom icons (Christian, mystical, alchemical)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-2"> <span class="checkbox-custom"></span>Gradients, SVG overlays, and animated filigree</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-3"> <span class="checkbox-custom"></span>Antiqued gilded navigation headers (Cardo font, gold gradients, layered shadow, metallic edge)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-4"> <span class="checkbox-custom"></span>Animated gold highlights and shimmering effects on navigation and buttons</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-5"> <span class="checkbox-custom"></span>Gold gradients and metallic textures for text and icons</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-6"> <span class="checkbox-custom"></span>SVG or image overlays for mystical motifs (stars, filigree, alchemy, etc.)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-7"> <span class="checkbox-custom"></span>Responsive, mobile-first layout with mystical branding</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-8"> <span class="checkbox-custom"></span>Accessibility: ensure all effects maintain high contrast and legibility</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-9"> <span class="checkbox-custom"></span>Custom transition animations for navigation (fade, slide, etc.)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-10"> <span class="checkbox-custom"></span>Use of React Navigation's TransitionPresets</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-11"> <span class="checkbox-custom"></span>Shared element transitions (e.g. react-navigation-shared-element)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-12"> <span class="checkbox-custom"></span>Smoother header/title transitions to reduce flash</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-13"> <span class="checkbox-custom"></span>Explore future mystical transition effects (e.g. shimmering/fade overlays)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="visual-14"> <span class="checkbox-custom"></span><strong>Future:</strong> advanced mystical effects (animated backgrounds, interactive filigree, dynamic light rays, etc.)</label></li>
+      </ul>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🛡️</span> <b>Authentication & Payment Gating Checklist</b></div>
+      <ul class="checklist" id="auth-payment-checklist">
+        <li><b>1. Supabase Auth Integration</b></li>
+        <li><label><input type="checkbox" data-key="auth-0"> Install <code>@supabase/supabase-js</code> if not already present.</label></li>
+        <li><label><input type="checkbox" data-key="auth-1"> Set up and securely store Supabase URL and anon key in your app.</label></li>
+        <li><label><input type="checkbox" data-key="auth-2"> Create authentication UI: Login (email/password, Google, Apple), Signup, Logout.</label></li>
+        <li><label><input type="checkbox" data-key="auth-3"> Implement Supabase Auth methods for sign-in, sign-up, and sign-out.</label></li>
+        <li><label><input type="checkbox" data-key="auth-4"> Handle authentication state (loading, error, signed-in, signed-out).</label></li>
+        <li><label><input type="checkbox" data-key="auth-5"> Store user info securely in app state/context.</label></li>
+        <li><b>2. User Profile & Paid Status</b></li>
+        <li><label><input type="checkbox" data-key="profile-0"> (Optional) Create a <code>profiles</code> table in Supabase: <code>id</code> (UUID), <code>is_paid</code> (boolean), etc.</label></li>
+        <li><label><input type="checkbox" data-key="profile-1"> Sync <code>profiles</code> table with authenticated users.</label></li>
+        <li><label><input type="checkbox" data-key="profile-2"> Use <code>is_paid</code> to gate premium features in the UI.</label></li>
+        <li><b>3. Payment Integration (after Auth is working)</b></li>
+        <li><label><input type="checkbox" data-key="payment-0"> Choose a payment provider (Stripe, RevenueCat, Expo In-App Purchases, etc.).</label></li>
+        <li><label><input type="checkbox" data-key="payment-1"> Integrate payment flow in the app.</label></li>
+        <li><label><input type="checkbox" data-key="payment-2"> On successful payment, update <code>is_paid</code> in Supabase.</label></li>
+        <li><label><input type="checkbox" data-key="payment-3"> Confirm feature unlock in the UI.</label></li>
+        <li><b>4. Feature Gating</b></li>
+        <li><label><input type="checkbox" data-key="gating-0"> Check <code>is_paid</code> status before unlocking premium features.</label></li>
+        <li><label><input type="checkbox" data-key="gating-1"> Show upgrade prompts for non-paid users when accessing premium features.</label></li>
+        <li><label><input type="checkbox" data-key="gating-2"> Ensure free features remain accessible to all users.</label></li>
+        <li><b>5. Testing & Security</b></li>
+        <li><label><input type="checkbox" data-key="test-0"> Test all authentication flows (sign-up, sign-in, sign-out, error handling).</label></li>
+        <li><label><input type="checkbox" data-key="test-1"> Test payment flow and feature gating.</label></li>
+        <li><label><input type="checkbox" data-key="test-2"> Secure all API endpoints and Supabase policies (RLS, etc.).</label></li>
+        <li><label><input type="checkbox" data-key="test-3"> Ensure no unauthorized access to paid features.</label></li>
+      </ul>
+      <script>
+        // Persist checklist state in localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+          const checklist = document.getElementById('auth-payment-checklist');
+          if (!checklist) return;
+          const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+          checkboxes.forEach(cb => {
+            const key = 'roadmap-auth-' + cb.getAttribute('data-key');
+            cb.checked = localStorage.getItem(key) === 'true';
+            cb.addEventListener('change', function() {
+              localStorage.setItem(key, cb.checked);
+            });
+          });
+        });
+      </script>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🔑</span> <b>V1: Production Launch Roadmap (Free to Try & One-Time Paid Upgrade)</b></div>
+      <ul class="checklist" data-section="v1">
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v1-0"> <span class="checkbox-custom"></span><b>Free Features:</b> Bible reader (all books/chapters/verses) and journal notes are free for all users. Free users can access mystical commentary for Genesis 1 and Matthew 1 (all individual verses).</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v1-1"> <span class="checkbox-custom"></span><b>Paid Upgrade ($4.99 One-Time Fee):</b> Unlock unlimited mystical commentary for all passages and bookmarking. Upgrade prompt and paid version button on home. Secure payment/authentication with CAPTCHA. No user profiles/settings required.</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v1-2"> <span class="checkbox-custom"></span><b>Commentary Persistence & Reuse:</b> All commentary responses stored in a DB. On passage request, check DB before calling API. Reduces API calls over time.</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v1-3"> <span class="checkbox-custom"></span><b>About Tab:</b> Dedicated tab introducing the app, vision, and mystical philosophy. Includes a user feedback button.</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v1-4"> <span class="checkbox-custom"></span><b>App Store Readiness:</b> Beta testing, documentation, screenshots, privacy policy, marketing launch.</label></li>
+      </ul>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">✨</span> <b>V2: Advanced & Community Features</b></div>
+      <ul class="checklist" data-section="v2">
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-0"> <span class="checkbox-custom"></span>Multiple Bible translations</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-1"> <span class="checkbox-custom"></span>API-powered word/phrase lookup (concordance)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-2"> <span class="checkbox-custom"></span>Community wisdom sharing & Social Reflection Messages</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-3"> <span class="checkbox-custom"></span>Daily mystical meditations or practices</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-4"> <span class="checkbox-custom"></span>Integration with note-taking apps</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-5"> <span class="checkbox-custom"></span>Customizable reading plans</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-6"> <span class="checkbox-custom"></span>Premium: Interconnected passages across chapters/books</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-7"> <span class="checkbox-custom"></span>Admin/editor tools for commentary review</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v2-8"> <span class="checkbox-custom"></span>Accessibility: Speech-to-text for user input, advanced TTS for premium</label></li>
+      </ul>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🔖</span> <b>Planned for V2: Bookmark, Views, and Feedback Features</b></div>
+      <ul class="checklist" data-section="bookmark-feedback">
+        <li>Implement increment logic for <code>views</code> and <code>bookmarks</code> columns in the app (UI and API integration)</li>
+        <li>Integrate new <code>bookmarks</code> and <code>feedback</code> tables: add endpoints, UI, and logic for bookmarking and user feedback</li>
+        <li>Ensure RLS/security policies for new tables</li>
+        <li>Add analytics usage to inform future development</li>
+      </ul>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🦮</span> <b>Planned for V2: Accessibility Features</b></div>
+      <ul class="checklist" data-section="accessibility">
+        <li>Adjustable text size (global setting applies to all screens; coordinate with bookmarks/views/feedback UI for consistency)</li>
+        <li>Integrate free text-to-speech (TTS) for passages/commentary (e.g., expo-speech)</li>
+        <li>Explore microphone/speech-to-text for journal/search (optional for V2)</li>
+        <li>Plan for premium LLM-powered speech-in/speech-out (future)</li>
+        <li>Ensure accessibility options are easy to find and use</li>
+        <li>Design for streamlined, unified accessibility controls across new and existing features</li>
+      </ul>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🗄️</span> <b>Production Database Enhancements (Ranked)</b></div>
+      <ul class="checklist" data-section="db">
+        <li><b>Indexing & Query Optimization</b> <i>(Immediate)</i>: Add indexes on <code>book</code>, <code>chapter</code>, <code>start_verse</code>, <code>end_verse</code>, <code>anchor_verse</code>. Composite indexes for common queries.</li>
+        <li><b>Data Integrity & Uniqueness</b> <i>(Immediate)</i>: Unique constraint on (<code>book</code>, <code>chapter</code>, <code>start_verse</code>, <code>end_verse</code>, <code>anchor_verse</code>). Validate all incoming data.</li>
+        <li><b>Security & Access (RLS, API keys, rate limiting)</b> <i>(Immediate)</i>: Use Supabase Row Level Security (RLS), secure API keys, and rate limiting.</li>
+        <li><b>Backup & Recovery</b> <i>(Immediate)</i>: Enable automated backups and test recovery procedures.</li>
+        <li><b>Storage & Retention</b>: Monitor table size and implement pruning/retention tools as needed.</li>
+        <li><b>Versioning & Edits</b>: Add version/history fields if commentary edits are allowed.</li>
+        <li><b>Analytics & Usage Tracking</b>: Track commentary accesses, add feedback/like counters.</li>
+        <li><b>Scalability</b>: Plan for read replicas and monitor Supabase limits as userbase grows.</li>
+      </ul>
+      <div style="margin-top: 0.7em; color: #ffe066; font-size: 1.08em;">
+        <b>Immediate items</b> are recommended for launch or pre-launch. Others can be scheduled for post-launch or as features require.
+      </div>
+    </section>
+
+    <section class="section roadmap-stage">
+      <div class="stage-label"><span class="icon">🜍</span> <b>V3+: Expansion & Ongoing</b></div>
+      <ul class="checklist" data-section="v3">
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-0"> <span class="checkbox-custom"></span>AI-powered allegorical/metaphorical insights</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-1"> <span class="checkbox-custom"></span>Advanced mystical commentary personalization</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-2"> <span class="checkbox-custom"></span>Regular OS compatibility updates</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-3"> <span class="checkbox-custom"></span>User feedback loop & new content/features</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-4"> <span class="checkbox-custom"></span>Living prompts for reflection/action</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-5"> <span class="checkbox-custom"></span>Global/public commentary DB</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="v3-6"> <span class="checkbox-custom"></span>Premium: LLM-powered speech-in/speech-out, conversational interaction</label></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="stage-label"><span class="icon">🕯️</span> <b>Feature Backlog & Ideas</b></div>
+      <ul class="checklist" data-section="backlog">
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="backlog-0"> <span class="checkbox-custom"></span>Passage randomizer (LLM + Bible API, partially implemented)</label></li>
+        <li><label><input type="checkbox" class="roadmap-checkbox" data-key="backlog-1"> <span class="checkbox-custom"></span>Additional premium features as userbase grows</label></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <div class="stage-label"><span class="icon">📜</span> <b>Notes</b></div>
+      <ul>
+        <li>Features are prioritized for best-practices delivery: foundational, core, payment, polish, then advanced/community.</li>
+        <li>Non-critical features deferred to V2/V3 for a focused MVP.</li>
+        <li>This roadmap supersedes prior versions; unique items from old roadmaps should be reviewed and integrated as needed.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:2em 0 1em 0;font-size:1.1em;color:gold;">
+    <span style="font-size:1.5em;">🜍</span> <span style="font-family:'Cardo',serif;">Mystical Bible Companion</span> &mdash; <span style="color:#fffbe6;">A journey of transformation</span> <span style="font-size:1.5em;">🜍</span>
+  </footer>
+</body>
+</html>
