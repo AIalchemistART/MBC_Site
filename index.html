@@ -351,7 +351,9 @@
           Please email me first using this form to be added as an internal tester.<br>
           <strong>Wait for my response before following the "Request Early Access" link below.</strong>
         </p>
-        <form class="mystical-form" action="mailto:manny@aialchemist.net" method="POST" enctype="text/plain">
+        <form class="mystical-form" name="tester-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="tester-signup">
+  <input type="hidden" name="bot-field">
           <label for="name">Name:</label>
           <input type="text" id="name" name="Name" required autocomplete="name">
           <label for="email">Email:</label>
@@ -363,6 +365,7 @@
             <label for="consent" class="consent-label">I would like to be added as a Mystical Bible Companion tester and consent to being contacted by email.</label>
           </div>
           <button type="submit" class="cta">Apply as Tester</button>
+        <div class="form-success" style="display:none; color:#ffe066; margin-top:1em;">Thank you! Your request has been received. Please wait for a response before following the Early Access link.</div>
         </form>
       </section>
       <button class="cta" onclick="window.open('https://play.google.com/apps/testing/com.aialchemist.mysticalbiblecompanion','_blank')">Request Early Access</button>
